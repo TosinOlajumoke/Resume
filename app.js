@@ -23,19 +23,19 @@ app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
 
 app.get('/index',function(req,res){
-    res.sendFile(__dirname + '/views/index.html');
+    res.sendFile(__dirname + '/index.html');
 });
 app.get('/contact',function(req,res){
-    res.sendFile(__dirname + '/views/contact.html');
+    res.sendFile(__dirname + '/contact.html');
 });
 app.get('/writing',function(req,res){
-    res.sendFile(__dirname + '/views/writing.html');
+    res.sendFile(__dirname + '/writing.html');
 });
 app.get('/project',function(req,res){
-    res.sendFile(__dirname + '/views/project.html');
+    res.sendFile(__dirname + '/project.html');
 });
 app.get('/resume',function(req,res){
-    res.sendFile(__dirname + '/views/resume.html');
+    res.sendFile(__dirname + '/resume.html');
 });
 
 
@@ -78,7 +78,7 @@ const mailOptions = {
 transporter.sendMail(mailOptions)
     .then(() => {
         //Successful message
-        res.sendFile(__dirname + '/views/success.html');
+        res.sendFile(__dirname + '/success.html');
     })
     .catch((error) => {
         //An error occurred
