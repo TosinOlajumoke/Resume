@@ -2,9 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const ejs = require('ejs');
-const mailGun = require('nodemailer-mailgun-transport');
 const serverless = require('serverless-http');
-const https = require('https');
+const fs = require('fs');
+const path = require('path');
+const { simpleParser } = require('mailparser');
 
 const port = 3000;
 
@@ -64,14 +65,22 @@ const transporter = nodemailer.createTransport({
       }
     });
 
-
+ // Generate HTML content for the email
+ const htmlContent = `
+ <html>
+  <body>
+     <h3>From: ${email}</h3>
+     <p>${msg}</p>
+ </body>
+ </html>
+`;
 
 const mailOptions = {
     from: full,
     to: process.env.AUTH_EMAIL,
     // cc: process.env.AUTH_EMAIL2,
     subject: sub,
-    text: email + ' ' + msg,
+    html: htmlContent
 
 };
 
