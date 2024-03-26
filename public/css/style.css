@@ -271,11 +271,15 @@ background-color: aliceblue;
     padding: 70px;
 }
 @media (max-width: 800px) {
-    #resume_section{padding:20px;}
-    width:100%;
+    #resume_section{padding:20px;
+                width:100%;}
     }
  #resume_section .row{
     padding-top: 40px;
+
+}
+#resume_section .Download{
+    float: right;
 
 }
 #resume_section h4{
