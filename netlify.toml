@@ -1,0 +1,12 @@
+[build]
+functions= "functions"
+
+
+[[redirects]]
+ from = "/*"
+<<<<<<< HEAD
+ to = "/index.html"
+=======
+ to = "/index.html"
+>>>>>>> a1db253f130b6a3b65bb9edf109bc248255c011d
+ status = 200  
